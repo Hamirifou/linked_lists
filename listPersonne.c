@@ -17,7 +17,7 @@ int comparerPersonne (Objet* objet1, Objet* objet2);
 
 
 int menu () {
-  printf ("\n\NGESTION D'UNE LISTE DE PERSONNES\n\n");
+  printf ("\n\nGESTION D'UNE LISTE DE PERSONNES\n\n");
   printf ("0 Fin\n");
   printf ("1 Insertion en tête de liste\n");
   printf ("2 Insertion en fin de liste\n");
@@ -61,7 +61,7 @@ int main () {
   printf ("Prénom de la personne à créer ? ");
   ch15 prenom; scanf ("%s", prenom) ;
   Personne* nouveau = creerPersonne (nom, prenom) ;
-  insererEnFinDeListe (lp, nouveau);
+  insererEnFinDeLISTE(lp,nouveau);
    } break;
 case 3 : {
   Personne* extrait = (Personne*) extraireEnTeteDeListe (lp);
@@ -83,9 +83,10 @@ case 5 : {
   printf ("Nom de la personne à extraire ? ");
   ch15 nom; scanf ("%s", nom);
   Personne* cherche = creerPersonne (nom, "?");
-  Personne* pp =(Personne*) chercherUnobjet (lp, cherche);
+  Personne* pp =(Personne*) chercherUnObjet(lp, cherche);
  if (extraireUnobjet (lp, pp)) {
     printf ("Élément %s %s extrait de la liste", pp->nom, pp->prenom);
+
   }
 
    } break;

@@ -183,13 +183,13 @@ bool extraireUnobjet (Liste* li, objet* objet) {
     precedent = ptc;
     ptc= elementCourant (li);
 
-    trouve =(li->comparer(ptc->refer,objet)) ? true : false;
+    trouve =(li->comparer(ptc->refer,objet)==0) ? true : false;
   }
   if (!trouve){
     return false;
   }
 
- extraireApres (li, ptc);
+ extraireApres (li, precedent);
 
   return true;
 }
